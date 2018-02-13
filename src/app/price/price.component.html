@@ -1,0 +1,23 @@
+<h4> {{ priceTest }} </h4>
+<table *ngIf='ethPriceData && btcPriceData' align="center">
+  <caption>CryptoCompare Price Updates</caption>
+  <thead>
+    <tr>
+      <th>Symbol</th>
+      <th>USD</th>
+      <th>EUR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let ethPriceData of ethPriceData'>
+      <td> ETH </td>
+      <td> {{ ethPriceData.USD }} </td>
+      <td> {{ ethPriceData.EUR }} </td>
+    </tr>
+    <tr *ngFor='let btcPriceData of btcPriceData'>
+      <td> BTC </td>
+      <td> {{ btcPriceData.USD }} </td>
+      <td> {{ btcPriceData.EUR }} </td>
+    </tr>
+  </tbody>
+</table>

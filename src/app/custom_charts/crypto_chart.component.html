@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <div style="display: block;">
+        <button *ngIf='loaded' (click)='showBTCData($event)'>Switch Currency</button><br><br>
+        <button *ngIf='loaded' (click)='show1M()'>1M</button>
+        <button *ngIf='loaded' (click)='show3M()'>3M</button>
+        <button *ngIf='loaded' (click)='show6M()'>6M</button>
+        <canvas *ngIf='loaded' baseChart width="400" height="400"
+            [datasets]="chartData"
+            [labels]="chartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+    <!-- <div class="col-md-6" style="margin-bottom: 10px">
+    <table class="table table-responsive table-condensed">
+      <tr>
+        <th *ngFor="let label of chartLabels">{{label}}</th>
+      </tr>
+      <tr *ngFor="let d of chartData">
+        <td *ngFor="let label of chartLabels; let j=index">{{d && d.data[j]}}</td>
+      </tr>
+    </table>
+    <button (click)="randomize()">CLICK</button>
+  </div> -->
+  </div>
+</div>
